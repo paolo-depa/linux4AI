@@ -1,0 +1,180 @@
+{
+  "runbooks": [
+    {
+      "id": "kdump-enable-verify",
+      "title": "Enable kdump and verify a crash kernel is armed",
+      "area": "kernel",
+      "symptoms": [
+        "no vmcore after panic",
+        "kdump not operational",
+        "crashkernel not reserved",
+        "set up kdump"
+      ],
+      "families": [
+        "rhel",
+        "sles",
+        "debian"
+      ],
+      "releases": [
+        "rhel8",
+        "rhel9",
+        "rhel10",
+        "sles15sp6",
+        "sles15sp7",
+        "sles16",
+        "debian12",
+        "debian13",
+        "ubuntu2204",
+        "ubuntu2404"
+      ],
+      "mode": "live",
+      "risk": "intrusive",
+      "requires_root": "true",
+      "vendor": "none",
+      "verified": "man",
+      "updated": "2026-11-27",
+      "path": "runbooks/kernel/kdump-enable-verify.md",
+      "tokens": 1386
+    },
+    {
+      "id": "kdump-trigger-test",
+      "title": "Prove kdump works by forcing a test crash",
+      "area": "kernel",
+      "symptoms": [
+        "verify kdump end to end",
+        "test crash dump capture"
+      ],
+      "families": [
+        "rhel",
+        "sles",
+        "debian"
+      ],
+      "releases": [
+        "rhel8",
+        "rhel9",
+        "rhel10",
+        "sles15sp6",
+        "sles15sp7",
+        "sles16",
+        "debian12",
+        "debian13",
+        "ubuntu2204",
+        "ubuntu2404"
+      ],
+      "mode": "live",
+      "risk": "disruptive",
+      "requires_root": "true",
+      "vendor": "none",
+      "verified": "man",
+      "updated": "2026-11-27",
+      "path": "runbooks/kernel/kdump-trigger-test.md",
+      "tokens": 898
+    },
+    {
+      "id": "kdump-vmcore-locate",
+      "title": "Locate and identify the dump a crash left behind",
+      "area": "kernel",
+      "symptoms": [
+        "where is the vmcore",
+        "vmcore file name differs",
+        "dump directory empty"
+      ],
+      "families": [
+        "rhel",
+        "sles",
+        "debian"
+      ],
+      "releases": [
+        "rhel8",
+        "rhel9",
+        "rhel10",
+        "sles15sp6",
+        "sles15sp7",
+        "sles16",
+        "debian12",
+        "debian13",
+        "ubuntu2204",
+        "ubuntu2404"
+      ],
+      "mode": "both",
+      "risk": "read-only",
+      "requires_root": "true",
+      "vendor": "none",
+      "verified": "man",
+      "updated": "2026-11-27",
+      "path": "runbooks/kernel/kdump-vmcore-locate.md",
+      "tokens": 749
+    },
+    {
+      "id": "kernel-debuginfo-install",
+      "title": "Install kernel debug symbols that match a kernel or vmcore",
+      "area": "kernel",
+      "symptoms": [
+        "need vmlinux for vmcore",
+        "crash says namelist mismatch",
+        "kernel debuginfo package missing"
+      ],
+      "families": [
+        "rhel",
+        "sles",
+        "debian"
+      ],
+      "releases": [
+        "rhel8",
+        "rhel9",
+        "rhel10",
+        "sles15sp6",
+        "sles15sp7",
+        "sles16",
+        "debian12",
+        "debian13",
+        "ubuntu2204",
+        "ubuntu2404"
+      ],
+      "mode": "both",
+      "risk": "intrusive",
+      "requires_root": "true",
+      "vendor": "none",
+      "verified": "unverified",
+      "updated": "2026-11-27",
+      "path": "runbooks/kernel/kernel-debuginfo-install.md",
+      "tokens": 1323
+    },
+    {
+      "id": "kernel-vmcore-open",
+      "title": "Open a vmcore with crash or drgn and confirm the symbols match",
+      "area": "kernel",
+      "symptoms": [
+        "open vmcore",
+        "crash will not start on vmcore",
+        "drgn warns symbols do not match",
+        "verify vmlinux matches dump"
+      ],
+      "families": [
+        "rhel",
+        "sles",
+        "debian"
+      ],
+      "releases": [
+        "rhel8",
+        "rhel9",
+        "rhel10",
+        "sles15sp6",
+        "sles15sp7",
+        "sles16",
+        "debian12",
+        "debian13",
+        "ubuntu2204",
+        "ubuntu2404"
+      ],
+      "mode": "offline",
+      "risk": "intrusive",
+      "requires_root": "true",
+      "vendor": "none",
+      "verified": "unverified",
+      "updated": "2026-11-27",
+      "path": "runbooks/kernel/kernel-vmcore-open.md",
+      "tokens": 1169
+    }
+  ]
+}

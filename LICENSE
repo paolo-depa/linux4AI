@@ -1,0 +1,12 @@
+linux4AI is licensed per file type:
+
+- Text (Markdown under runbooks/, docs/, skills/*/SKILL.md and generated
+  copies in skills/*/references/): CC-BY-4.0, see LICENSES/CC-BY-4.0.txt
+- Code (scripts/, command snippets and script files inside runbooks and
+  skills): Apache-2.0, see LICENSES/Apache-2.0.txt
+
+Attribution: "linux4AI contributors".
+
+Third-party tools, product names and error-code meanings referenced here belong
+to their respective owners. Each runbook cites its primary sources in its front
+matter; see SOURCES.md and docs/adr/0001-licensing-and-original-wording.md.

@@ -1,0 +1,13 @@
+# linux4AI
+
+> Advanced Linux debugging runbooks for L3 engineers on RHEL, SLES and Debian/Ubuntu enterprise releases. One symptom per runbook; commands are given per distro family.
+
+Start with [INDEX.md](INDEX.md). Machine-readable catalog: [index.json](index.json).
+
+## kernel
+
+- [Enable kdump and verify a crash kernel is armed](runbooks/kernel/kdump-enable-verify.md): no vmcore after panic; kdump not operational; crashkernel not reserved; set up kdump
+- [Prove kdump works by forcing a test crash](runbooks/kernel/kdump-trigger-test.md): verify kdump end to end; test crash dump capture
+- [Locate and identify the dump a crash left behind](runbooks/kernel/kdump-vmcore-locate.md): where is the vmcore; vmcore file name differs; dump directory empty
+- [Install kernel debug symbols that match a kernel or vmcore](runbooks/kernel/kernel-debuginfo-install.md): need vmlinux for vmcore; crash says namelist mismatch; kernel debuginfo package missing
+- [Open a vmcore with crash or drgn and confirm the symbols match](runbooks/kernel/kernel-vmcore-open.md): open vmcore; crash will not start on vmcore; drgn warns symbols do not match; verify vmlinux matches dump
