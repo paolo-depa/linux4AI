@@ -1,0 +1,5 @@
+INDEX.md linguist-generated=true
+index.json linguist-generated=true
+llms.txt linguist-generated=true
+skills/*/references/** linguist-generated=true
+* text=auto eol=lf

@@ -1,0 +1,47 @@
+name: Incorrect or outdated content
+description: A runbook command, claim, path or release difference is wrong
+labels: ["accuracy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dangerous errors (a command presented as safe that can cause data loss or an outage) go through the Security tab, not here.
+  - type: input
+    id: runbook
+    attributes:
+      label: Runbook ID
+      placeholder: kdump-enable-verify
+    validations:
+      required: true
+  - type: dropdown
+    id: family
+    attributes:
+      label: Affected family and release
+      multiple: true
+      options:
+        - RHEL 8
+        - RHEL 9
+        - RHEL 10
+        - SLES 15 SP6
+        - SLES 15 SP7
+        - SLES 16
+        - Debian 12
+        - Debian 13
+        - Ubuntu 22.04
+        - Ubuntu 24.04
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Quote the line and say what actually happens.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Primary source
+      description: URL to official documentation, upstream source or a reproducible run (date, release, kernel).
+    validations:
+      required: true

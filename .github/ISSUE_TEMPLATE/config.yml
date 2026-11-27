@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Dangerous or unsafe content
+    url: https://github.com/paolo-depa/linux4AI/security/advisories/new
+    about: Report commands presented as safe that can cause data loss or outages, prompt-injection paths, or committed customer data.

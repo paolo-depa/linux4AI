@@ -1,0 +1,36 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild generated files
+        run: python3 scripts/build.py
+
+      - name: Generated files are committed
+        run: git diff --exit-code && test -z "$(git ls-files --others --exclude-standard)"
+
+      - name: Validate runbooks, skills and generated files
+        run: python3 scripts/validate.py
+
+      - name: Shellcheck installer
+        run: shellcheck scripts/install.sh
+
+      - name: Agent Skills reference validator
+        run: |
+          pip install "git+https://github.com/agentskills/agentskills.git@83021e2be457a9b6679148719c1f6074f0ad975e#subdirectory=skills-ref"
+          for d in skills/*/; do skills-ref validate "$d"; done
